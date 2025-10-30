@@ -56,8 +56,8 @@ export function SmartDashboard() {
 
 	// Case 2: User has no active multisigs - show welcome screen
 	return (
-		<div className="max-w-4xl mx-auto mt-10 px-4">
-			<div className="text-center mb-12">
+		<div className="max-w-4xl mx-auto mt-10 px-4 flex-1">
+			<div className="text-center mb-12 flex-1">
 				<h1 className="text-4xl font-bold mb-4">
 					Welcome to Sagat
 				</h1>

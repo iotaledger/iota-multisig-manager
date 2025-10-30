@@ -1,0 +1,93 @@
+@reference "../../index.css";
+
+#cookie-library-content #skcm-cookie-library {
+	@apply flex flex-col;
+}
+
+#skcm-cookie-library#skcm-cookie-library {
+	@apply flex flex-col gap-y-10;
+}
+
+#skcm-cookie-library#skcm-cookie-library
+	table
+	tbody
+	tr
+	td
+	a {
+	@apply text-blue-600 hover:text-blue-600/80;
+	@apply transition-colors;
+}
+
+#skcm-cookie-library#skcm-cookie-library h4 {
+	@apply m-0;
+}
+
+#skcm-cookie-library#skcm-cookie-library
+	#skcm-cookie-library__preferences {
+	@apply mt-6;
+}
+
+#skcm-cookie-library#skcm-cookie-library
+	#skcm-cookie-library__preferences
+	label {
+	@apply my-0;
+	@apply normal-case;
+}
+
+#skcm-cookie-library#skcm-cookie-library
+	#skcm-cookie-library__preferences
+	label
+	input {
+	@apply mr-1;
+}
+
+#skcm-cookie-library#skcm-cookie-library
+	#skcm-cookie-library__preferences__button {
+	@apply mt-10;
+	@apply bg-neutral-200 hover:opacity-80;
+	@apply rounded-md;
+	@apply normal-case;
+	@apply px-4;
+	@apply transition-opacity;
+}
+
+#skcm-cookie-library__necessary-cookies {
+	@apply w-full;
+}
+
+#skcm-necessary-cookies-table#skcm-necessary-cookies-table,
+#skcm-additional-cookies-table#skcm-additional-cookies-table {
+	@apply border-separate border-spacing-0;
+	@apply my-6;
+	@apply border border-solid border-neutral-950/20;
+	@apply max-md:block max-md:overflow-x-auto max-md:whitespace-nowrap;
+}
+
+#skcm-additional-cookies-table#skcm-additional-cookies-table
+	th,
+#skcm-necessary-cookies-table#skcm-necessary-cookies-table
+	th {
+	@apply text-[#0a0a0a];
+}
+
+#skcm-additional-cookies-table#skcm-additional-cookies-table
+	:is(td, th),
+#skcm-necessary-cookies-table#skcm-necessary-cookies-table
+	:is(td, th) {
+	@apply border-b-0;
+}
+
+#skcm-additional-cookies-table#skcm-additional-cookies-table
+	td,
+#skcm-necessary-cookies-table#skcm-necessary-cookies-table
+	td {
+	@apply border-t border-neutral-950/20;
+}
+
+#skcm-additional-cookies-table#skcm-additional-cookies-table
+	th,
+#skcm-necessary-cookies-table#skcm-necessary-cookies-table
+	th {
+	@apply font-semibold;
+	@apply border-t-0;
+}

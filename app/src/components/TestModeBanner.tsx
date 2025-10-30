@@ -3,25 +3,24 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { AlertTriangle, X } from 'lucide-react';
-import { useState } from 'react';
 
 import { useNetwork } from '../contexts/NetworkContext';
 
-export function TestModeBanner() {
+interface TestModeBannerProps {
+	onDismiss?: () => void;
+}
+export function TestModeBanner({
+	onDismiss,
+}: TestModeBannerProps) {
 	const { isTestMode, network, setNetwork } = useNetwork();
-	const [isDismissed, setIsDismissed] = useState(false);
 
-	if (!isTestMode || isDismissed) {
+	if (!isTestMode) {
 		return null;
 	}
 
-	const handleDismiss = () => {
-		setIsDismissed(true);
-	};
-
 	return (
-		<div className="fixed bottom-0 left-0 right-0 bg-yellow-100 border-t-2 border-yellow-300 px-4 py-3 shadow-lg z-50">
-			<div className="flex items-center justify-between max-w-7xl mx-auto">
+		<div className="bg-yellow-100 border-t-2 border-yellow-300 py-3">
+			<div className="flex items-center justify-between container mx-auto">
 				<div className="flex items-center gap-3">
 					<AlertTriangle className="w-5 h-5 text-yellow-700" />
 					<div>
@@ -42,7 +41,7 @@ export function TestModeBanner() {
 						Switch to Mainnet
 					</button>
 					<button
-						onClick={handleDismiss}
+						onClick={onDismiss}
 						className="p-1 hover:bg-yellow-200 rounded transition-colors"
 						title="Dismiss"
 					>
