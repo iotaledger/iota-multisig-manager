@@ -43,7 +43,6 @@ addressesRouter.post(
 				try {
 					return parsePublicKey(keyStr);
 				} catch (error) {
-					 
 					console.warn(
 						'Failed to parse public key:',
 						keyStr,

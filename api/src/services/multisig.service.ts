@@ -112,7 +112,7 @@ export const validateQuorum = async (
 // Returns true if the multisig is finalized (all members have accepted the invitation).
 export const isMultisigFinalized = async (
 	address: string,
-	 
+
 	tx?: any,
 ) => {
 	const query = tx ? tx.query : db.query;
