@@ -26,6 +26,8 @@ export default [
 		},
 		rules: {
 			'license-check/license-check': 'error',
+			'no-console': 'warn',
+			'@typescript-eslint/no-explicit-any': 'warn',
 		},
 	},
 ];

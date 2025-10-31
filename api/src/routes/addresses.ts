@@ -43,6 +43,7 @@ addressesRouter.post(
 				try {
 					return parsePublicKey(keyStr);
 				} catch (error) {
+					// eslint-disable-next-line no-console
 					console.warn(
 						'Failed to parse public key:',
 						keyStr,
