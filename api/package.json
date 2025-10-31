@@ -2,7 +2,7 @@
 	"name": "sagat-api",
 	"scripts": {
 		"dev": "bun run --hot src/index.ts",
-		"build": "bun build src/index.ts --outdir dist --target bun",
+		"build": "bun build src/index.ts --outdir dist --target bun --external=@iota/iota-sdk",
 		"test:e2e": "bun test --timeout 30000",
 		"test:watch": "bun test --watch",
 		"db:generate": "bun drizzle-kit generate",
