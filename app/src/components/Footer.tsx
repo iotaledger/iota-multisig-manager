@@ -1,8 +1,15 @@
+// Copyright (c) 2025 IOTA Stiftung
+// SPDX-License-Identifier: Apache-2.0
+
 import { IotaLogoWeb } from '@iota/apps-ui-icons';
 import { Link } from 'react-router-dom';
 
 const FOOTER_LINKS = [
-	{ name: 'Cookie Policy', href: '/cookie-policy' },
+	{
+		text: 'Terms & Conditions',
+		url: 'https://www.iota.org/terms-of-use',
+	},
+	{ text: 'Cookie Policy', url: '/cookie-policy' },
 ];
 
 export function Footer() {
@@ -22,11 +29,17 @@ export function Footer() {
 					<nav className="flex flex-row gap-4">
 						{FOOTER_LINKS.map((link) => (
 							<Link
-								key={link.name}
-								to={link.href}
+								key={link.text}
+								to={link.url}
 								className="hover:underline"
+								{...(link.url.startsWith('http')
+									? {
+											target: '_blank',
+											rel: 'noopener noreferrer',
+										}
+									: {})}
 							>
-								{link.name}
+								{link.text}
 							</Link>
 						))}
 					</nav>
