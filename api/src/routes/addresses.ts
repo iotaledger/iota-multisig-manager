@@ -77,7 +77,9 @@ addressesRouter.get(
 		const whereConditions = [
 			inArray(
 				SchemaMultisigMembers.publicKey,
-				publicKeys.map((pubKey) => pubKey.toIotaPublicKey()),
+				publicKeys.map((pubKey) =>
+					pubKey.toIotaPublicKey(),
+				),
 			),
 			eq(SchemaMultisigMembers.isAccepted, true),
 			eq(SchemaMultisigMembers.isRejected, false),

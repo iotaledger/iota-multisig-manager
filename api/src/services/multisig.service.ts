@@ -30,7 +30,12 @@ const isFullyResolved = (tx: Transaction) => {
 	}
 
 	// The gas payment, budget, and price have been set
-	if (!data.gasData || !data.gasData.budget || !data.gasData.price || !data.gasData.payment) {
+	if (
+		!data.gasData ||
+		!data.gasData.budget ||
+		!data.gasData.price ||
+		!data.gasData.payment
+	) {
 		return false;
 	}
 

@@ -2,9 +2,6 @@
 // Modifications Copyright (c) 2025 IOTA Stiftung
 // SPDX-License-Identifier: Apache-2.0
 
-/* eslint-disable no-console */
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 import {
 	getFullnodeUrl,
 	IotaClient,
@@ -19,7 +16,9 @@ import { normalizeIotaAddress } from '@iota/iota-sdk/utils';
  * Get a IOTA client for localnet
  */
 export function getLocalClient(): IotaClient {
-	return new IotaClient({ url: getFullnodeUrl('localnet') });
+	return new IotaClient({
+		url: getFullnodeUrl('localnet'),
+	});
 }
 
 /**
@@ -51,8 +50,10 @@ export async function fundAddress(
 		});
 
 		return true;
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	} catch (error: any) {
 		// Faucet might not be available, but that's ok for some tests
+		// eslint-disable-next-line no-console
 		console.warn(`Faucet funding failed: ${error.message}`);
 		return false;
 	}

@@ -103,7 +103,9 @@ export function ProposalDetailPage() {
 
 			{showNetworkMissmatch && (
 				<NetworkMismatchBanner
-					requestedNetwork={proposal?.network as IotaNetwork}
+					requestedNetwork={
+						proposal?.network as IotaNetwork
+					}
 					currentNetwork={network}
 					onSwitch={handleSwitchNetwork}
 				/>
