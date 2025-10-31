@@ -25,6 +25,7 @@ const buildSimpleTx = async () => {
 
 	const built = await tx.build({ client });
 
+	 
 	console.log(toBase64(built));
 };
 
