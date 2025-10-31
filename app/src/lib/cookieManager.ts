@@ -7,7 +7,7 @@ export const SKCM_COOKIES_ACCEPTED_NAME =
 	'SKCM_cookies_accepted';
 
 const handleCookieConsent = (bool: boolean): void => {
-	document.cookie = `${SKCM_COOKIES_ACCEPTED_NAME}=${String(bool)}; path=/; max-age=${60 * 60 * 24 * 365} ; SameSite=Lax; Secure; HTTPOnly`;
+	document.cookie = `${SKCM_COOKIES_ACCEPTED_NAME}=${bool ? 'true' : 'false'}; path=/; max-age=${60 * 60 * 24 * 365};`;
 };
 
 export const SKCM_CONFIG: SKCMConfiguration = {
