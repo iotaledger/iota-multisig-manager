@@ -12,10 +12,21 @@ Sagat is a full-stack application for managing IOTA blockchain multisig wallets,
 ## Starting to work locally
 
 First create a `.env` file `/api/.env` based on the `.env.example` file.
+
+``sh
+cp api/.env.test api/.env
+```
+
 Start postgres locally using Docker:
 
 ```sh
 docker compose up postgres -d
+```
+
+The first time run the migrations to create the database schema:
+
+```sh
+(cd api && bun run db:migrate)
 ```
 
 Then you can run, from the root of the repository:
