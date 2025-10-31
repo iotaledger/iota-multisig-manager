@@ -1,3 +1,6 @@
+// Copyright (c) 2025 IOTA Stiftung
+// SPDX-License-Identifier: Apache-2.0
+
 import { type SKCMConfiguration } from '@boxfish-studio/react-cookie-manager';
 
 export const SKCM_COOKIES_ACCEPTED_NAME =
@@ -27,7 +30,8 @@ export const SKCM_CONFIG: SKCMConfiguration = {
 			},
 			{
 				name: 'connected-wallet',
-				purpose: 'Automatic login.',
+				purpose:
+					'Stores the user’s authentication token to keep the user securely logged in. This cookie is essential for the web app to function.',
 				expiry: '1 year',
 				type: 'HTTP',
 				showDisclaimerIfMissing: false,
