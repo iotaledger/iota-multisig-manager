@@ -86,8 +86,6 @@ export default [
 				{
 					pattern:
 						' Copyright \\(c\\) (Mysten Labs, Inc\\.\\n Modifications Copyright \\(c\\) 20\\d{2} IOTA Stiftung|20\\d{2} IOTA Stiftung)\\n SPDX-License-Identifier: Apache-2\\.0',
-					template:
-						' Copyright (c) 2024 IOTA Stiftung\n SPDX-License-Identifier: Apache-2.0',
 				},
 				2,
 			],
