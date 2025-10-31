@@ -11,7 +11,7 @@ export default [
   {
     files: ['{sdk,app,api}/**/*.{ts,tsx,js,mjs}'],
     // If you need to ignore specific paths, add them here
-    // ignores: ['sdk/create-dapp/templates/**/*'],
+    ignores: ['app/eslint.config.js'],
     languageOptions: {
       parser: tsParser,
       parserOptions: {
