@@ -11,11 +11,11 @@ import {
 } from 'bun:test';
 
 import { ApiTestFramework } from './framework/api-test-framework';
+import { getLocalClient } from './setup/iota-network';
 import {
 	createTestApp,
 	setupSharedTestEnvironment,
 } from './setup/shared-test-setup';
-import { getLocalClient } from './setup/iota-network';
 
 setupSharedTestEnvironment();
 

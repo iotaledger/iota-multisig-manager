@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+if [ "$NPM_PRECOMMIT_HOOK" = "true" ]; then
+  bunx lint-staged --allow-empty
+fi

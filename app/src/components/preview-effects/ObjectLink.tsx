@@ -4,8 +4,8 @@
 
 import { useIotaClientContext } from '@iota/dapp-kit';
 import {
-	type ObjectOwner,
 	type IotaObjectChange,
+	type ObjectOwner,
 } from '@iota/iota-sdk/client';
 import { formatAddress } from '@iota/iota-sdk/utils';
 import { CheckIcon, CopyIcon } from 'lucide-react';
@@ -25,7 +25,7 @@ const getOwnerDisplay = (
 	if ('AddressOwner' in owner)
 		return { address: owner.AddressOwner };
 	// if ('ObjectOwner' in owner)
-		return { object: owner.ObjectOwner };
+	return { object: owner.ObjectOwner };
 	// TODO: ConsensusAddressOwner doesn't exist yet in the SDK
 	// return { object: owner.ConsensusAddressOwner.owner };
 };

@@ -10,7 +10,11 @@ import { Textarea } from '@/components/ui/textarea';
 import { ObjectLink } from '../ObjectLink';
 import { PreviewCard } from '../PreviewCard';
 
-export function Events({ events }: { events: IotaEvent[] }) {
+export function Events({
+	events,
+}: {
+	events: IotaEvent[];
+}) {
 	if (events.length === 0) {
 		return <div>No events were emitted.</div>;
 	}
