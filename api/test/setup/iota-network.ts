@@ -2,8 +2,8 @@
 // Modifications Copyright (c) 2025 IOTA Stiftung
 // SPDX-License-Identifier: Apache-2.0
 
-/* eslint-disable no-console */
-/* eslint-disable @typescript-eslint/no-explicit-any */
+ 
+ 
 
 import {
 	getFullnodeUrl,
@@ -19,7 +19,9 @@ import { normalizeIotaAddress } from '@iota/iota-sdk/utils';
  * Get a IOTA client for localnet
  */
 export function getLocalClient(): IotaClient {
-	return new IotaClient({ url: getFullnodeUrl('localnet') });
+	return new IotaClient({
+		url: getFullnodeUrl('localnet'),
+	});
 }
 
 /**

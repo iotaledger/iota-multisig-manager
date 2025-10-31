@@ -43,7 +43,7 @@ addressesRouter.post(
 				try {
 					return parsePublicKey(keyStr);
 				} catch (error) {
-					// eslint-disable-next-line no-console
+					 
 					console.warn(
 						'Failed to parse public key:',
 						keyStr,
@@ -77,7 +77,9 @@ addressesRouter.get(
 		const whereConditions = [
 			inArray(
 				SchemaMultisigMembers.publicKey,
-				publicKeys.map((pubKey) => pubKey.toIotaPublicKey()),
+				publicKeys.map((pubKey) =>
+					pubKey.toIotaPublicKey(),
+				),
 			),
 			eq(SchemaMultisigMembers.isAccepted, true),
 			eq(SchemaMultisigMembers.isRejected, false),

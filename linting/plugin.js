@@ -4,7 +4,7 @@
 const licenseCheck = require('./rules/license-check.rule');
 
 module.exports = {
-    rules: {
-        'license-check': licenseCheck,
-    },
+	rules: {
+		'license-check': licenseCheck,
+	},
 };

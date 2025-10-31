@@ -30,7 +30,12 @@ const isFullyResolved = (tx: Transaction) => {
 	}
 
 	// The gas payment, budget, and price have been set
-	if (!data.gasData || !data.gasData.budget || !data.gasData.price || !data.gasData.payment) {
+	if (
+		!data.gasData ||
+		!data.gasData.budget ||
+		!data.gasData.price ||
+		!data.gasData.payment
+	) {
 		return false;
 	}
 
@@ -107,7 +112,7 @@ export const validateQuorum = async (
 // Returns true if the multisig is finalized (all members have accepted the invitation).
 export const isMultisigFinalized = async (
 	address: string,
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	 
 	tx?: any,
 ) => {
 	const query = tx ? tx.query : db.query;
