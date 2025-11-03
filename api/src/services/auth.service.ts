@@ -181,6 +181,7 @@ export const connectToPublicKey = async (c: Context) => {
 
 		return c.json({ success: true });
 	} catch (e) {
+		// eslint-disable-next-line no-console
 		console.error('Error in connectToPublicKey:', e);
 		authAttempts.inc({ status: 'failed' });
 		return c.json({ error: 'Authentication failed' }, 500);
