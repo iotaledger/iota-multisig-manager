@@ -39,7 +39,7 @@ app.use(
 			return CORS_ALLOWED_ORIGINS.includes(origin)
 				? origin
 				: // Vercel previews
-					origin.startsWith('https://sagat-app-') &&
+					origin.startsWith('https://sagat') &&
 					  origin.endsWith('-iota1.vercel.app')
 					? origin
 					: CORS_ALLOWED_ORIGINS[0];
