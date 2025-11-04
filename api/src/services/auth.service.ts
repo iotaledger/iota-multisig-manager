@@ -161,7 +161,7 @@ export const connectToPublicKey = async (c: Context) => {
 			JWT_COOKIE_NAME,
 			await issueJwt(pubKeys, 'cookie'),
 			{
-				sameSite: 'Lax',
+				sameSite: 'None',
 				secure: true,
 				httpOnly: true,
 				path: '/',
