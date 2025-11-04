@@ -47,4 +47,4 @@ USER sagat
 EXPOSE 3000
 
 # Start the API server (production mode - run built file)
-CMD ["bun", "run", "dist/index.js"]
+CMD ["sh", "-c", "bun db:migrate && bun run dist/index.js"]
