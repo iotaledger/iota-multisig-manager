@@ -161,7 +161,7 @@ export const connectToPublicKey = async (c: Context) => {
 			JWT_COOKIE_NAME,
 			await issueJwt(pubKeys, 'cookie'),
 			{
-				sameSite: 'Lax',
+				sameSite: 'None',
 				secure: true,
 				httpOnly: true,
 				path: '/',
@@ -277,7 +277,7 @@ export const disconnect = async (c: Context) => {
 		path: '/',
 		secure: true,
 		httpOnly: true,
-		sameSite: 'Lax', // Match the cookie setting
+		sameSite: 'None', // Match the cookie setting
 	});
 	activeJwtTokens.dec();
 	return c.json({ success: true });
