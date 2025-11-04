@@ -275,7 +275,7 @@ export const disconnect = async (c: Context) => {
 		path: '/',
 		secure: true,
 		httpOnly: true,
-		sameSite: 'Lax', // Match the cookie setting
+		sameSite: 'None', // Match the cookie setting
 	});
 	activeJwtTokens.dec();
 	return c.json({ success: true });
