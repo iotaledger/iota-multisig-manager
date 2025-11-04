@@ -230,7 +230,9 @@ export const authMiddleware = async (
 
 		c.set('publicKeys', keys);
 		return await next();
-	} catch {
+	} catch (e) {
+		// eslint-disable-next-line no-console
+		console.error('Error in authMiddleware:', e);
 		return c.text('Unauthorized', 401);
 	}
 };
