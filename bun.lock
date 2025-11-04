@@ -47,6 +47,7 @@
         "@dnd-kit/sortable": "^10.0.0",
         "@dnd-kit/utilities": "^3.2.2",
         "@hookform/resolvers": "^5.2.2",
+        "@iota/apps-ui-icons": "^0.4.2",
         "@iota/dapp-kit": "experimental",
         "@iota/iota-sdk": "experimental",
         "@iotaledger/sagat": "workspace:*",
@@ -254,6 +255,8 @@
     "@humanwhocodes/retry": ["@humanwhocodes/retry@0.4.3", "", {}, "sha512-bV0Tgo9K4hfPCek+aMAn81RppFKv2ySDQeMoSZuvTASywNTnVJCArCZE2FWqpvIatKu7VMRLWlR1EazvVhDyhQ=="],
 
     "@ianvs/prettier-plugin-sort-imports": ["@ianvs/prettier-plugin-sort-imports@4.7.0", "", { "dependencies": { "@babel/generator": "^7.26.2", "@babel/parser": "^7.26.2", "@babel/traverse": "^7.25.9", "@babel/types": "^7.26.0", "semver": "^7.5.2" }, "peerDependencies": { "@prettier/plugin-oxc": "^0.0.4", "@vue/compiler-sfc": "2.7.x || 3.x", "content-tag": "^4.0.0", "prettier": "2 || 3 || ^4.0.0-0", "prettier-plugin-ember-template-tag": "^2.1.0" }, "optionalPeers": ["@prettier/plugin-oxc", "@vue/compiler-sfc", "content-tag", "prettier-plugin-ember-template-tag"] }, "sha512-soa2bPUJAFruLL4z/CnMfSEKGznm5ebz29fIa9PxYtu8HHyLKNE1NXAs6dylfw1jn/ilEIfO2oLLN6uAafb7DA=="],
+
+    "@iota/apps-ui-icons": ["@iota/apps-ui-icons@0.4.2", "", { "peerDependencies": { "react": "^18 || ^19" } }, "sha512-DGDvd39Qo8woLk7z2LzQ0aF9X/6sRUxFZsHms0su4s26wj3MizF6UAxTZsHKrnL96osyLLQzNdp6seFqhcqyfA=="],
 
     "@iota/bcs": ["@iota/bcs@1.2.0", "", { "dependencies": { "bs58": "^6.0.0" } }, "sha512-QdRSR0KpJ87tdjVNmM/j0+0DvE0aTxHIa02337iluaOsMqtJ8OdgUCfSyLduC/3qS+8tJE+UB1KOw55tF+sN2w=="],
 
