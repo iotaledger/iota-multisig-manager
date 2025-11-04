@@ -22,7 +22,7 @@
     "api": {
       "name": "sagat-api",
       "dependencies": {
-        "@iota/iota-sdk": "^1.6.1",
+        "@iota/iota-sdk": "experimental",
         "@iotaledger/sagat": "workspace:*",
         "dataloader": "^2.2.3",
         "drizzle-orm": "^0.44.5",
@@ -46,8 +46,8 @@
         "@dnd-kit/sortable": "^10.0.0",
         "@dnd-kit/utilities": "^3.2.2",
         "@hookform/resolvers": "^5.2.2",
-        "@iota/dapp-kit": "^0.5.3",
-        "@iota/iota-sdk": "^1.6.1",
+        "@iota/dapp-kit": "experimental",
+        "@iota/iota-sdk": "experimental",
         "@iotaledger/sagat": "workspace:*",
         "@noble/hashes": "^2.0.1",
         "@radix-ui/react-accordion": "^1.2.12",
@@ -254,11 +254,13 @@
 
     "@iota/bcs": ["@iota/bcs@1.2.0", "", { "dependencies": { "bs58": "^6.0.0" } }, "sha512-QdRSR0KpJ87tdjVNmM/j0+0DvE0aTxHIa02337iluaOsMqtJ8OdgUCfSyLduC/3qS+8tJE+UB1KOw55tF+sN2w=="],
 
-    "@iota/dapp-kit": ["@iota/dapp-kit@0.5.3", "", { "dependencies": { "@iota/iota-sdk": "1.6.1", "@iota/wallet-standard": "0.2.15", "@radix-ui/react-dialog": "^1.1.1", "@radix-ui/react-dropdown-menu": "^2.1.1", "@radix-ui/react-slot": "^1.1.0", "@vanilla-extract/css": "^1.15.3", "@vanilla-extract/dynamic": "^2.1.1", "@vanilla-extract/recipes": "^0.5.3", "clsx": "^2.1.1", "zustand": "^4.4.1" }, "peerDependencies": { "@tanstack/react-query": "^5.50.1", "react": "*" } }, "sha512-XdEBM8+ylcQpxcZ/iwIBzvz60/phfaYFCVVK+lewCxXkY+XLRrRggGBp5wA2LLtHPTvoMJpf/hpMcv1xtZ5wTg=="],
+    "@iota/dapp-kit": ["@iota/dapp-kit@0.0.0-experimental-20251104091009", "", { "dependencies": { "@iota/iota-names-sdk": "^0.3.0", "@iota/iota-sdk": "0.0.0-experimental-20251104091009", "@iota/wallet-standard": "0.0.0-experimental-20251104091009", "@radix-ui/react-dialog": "^1.1.1", "@radix-ui/react-dropdown-menu": "^2.1.1", "@radix-ui/react-slot": "^1.1.0", "@vanilla-extract/css": "^1.15.3", "@vanilla-extract/dynamic": "^2.1.1", "@vanilla-extract/recipes": "^0.5.3", "clsx": "^2.1.1", "zustand": "^4.4.1" }, "peerDependencies": { "@tanstack/react-query": "^5.50.1", "react": "*" } }, "sha512-Fh7CE6poCRo1Ut+y0zp+Th9jayMHF/YKt1zo6AvilDWmCvEUxSTTHI3zhVc/ObYFSzhFG/zIHmQ7QLG/F8m+HA=="],
 
-    "@iota/iota-sdk": ["@iota/iota-sdk@1.6.1", "", { "dependencies": { "@graphql-typed-document-node/core": "^3.2.0", "@iota/bcs": "1.2.0", "@noble/curves": "^1.4.2", "@noble/hashes": "^1.4.0", "@scure/bip32": "^1.4.0", "@scure/bip39": "^1.3.0", "@suchipi/femver": "^1.0.0", "bech32": "^2.0.0", "bignumber.js": "^9.1.1", "gql.tada": "^1.8.2", "graphql": "^16.9.0", "tweetnacl": "^1.0.3", "valibot": "^0.36.0" } }, "sha512-V7rx7m9erCn9lr4hNZVMtwmka2NsoTZ9EFSE4ZqEDO44cWdheM61+i/y5HJhvvmYAb/kkDfSmfdmzLaGTbVVYg=="],
+    "@iota/iota-names-sdk": ["@iota/iota-names-sdk@0.3.0", "", { "dependencies": { "@noble/hashes": "^1.4.0" }, "peerDependencies": { "@iota/iota-sdk": "^1.5.0" } }, "sha512-UU0ZRcwkOEexrsa3RGtoJ/tD0G1moM62CmGjfifOjisA3gSDn6f13mIxWreM6nalhp69t2WKpF69wQ1Rcd8MHQ=="],
 
-    "@iota/wallet-standard": ["@iota/wallet-standard@0.2.15", "", { "dependencies": { "@iota/iota-sdk": "1.6.1", "@wallet-standard/core": "1.0.3" } }, "sha512-N0WEUaMWYjX7G2AYEDGFncxlILwrjwCsxKmPFcPeFztVkHs23uYvRfFJvWVLuHIBhyNNTM1HxMZ8m7TOXclqmQ=="],
+    "@iota/iota-sdk": ["@iota/iota-sdk@0.0.0-experimental-20251104091009", "", { "dependencies": { "@graphql-typed-document-node/core": "^3.2.0", "@iota/bcs": "1.2.0", "@noble/curves": "^1.4.2", "@noble/hashes": "^1.4.0", "@scure/bip32": "^1.4.0", "@scure/bip39": "^1.3.0", "@suchipi/femver": "^1.0.0", "bech32": "^2.0.0", "bignumber.js": "^9.1.1", "gql.tada": "^1.8.2", "graphql": "^16.9.0", "tweetnacl": "^1.0.3", "valibot": "^0.36.0" } }, "sha512-eXbDLjbNzdxfkPp5zJUX74zgHQ9NbTvSwRLXD5WcPfNZgwiN79U22kVf1cygOeV6w9hGYDqs2R4I1Idre/Ti2w=="],
+
+    "@iota/wallet-standard": ["@iota/wallet-standard@0.0.0-experimental-20251104091009", "", { "dependencies": { "@iota/iota-sdk": "0.0.0-experimental-20251104091009", "@wallet-standard/core": "1.0.3" } }, "sha512-pfimFSD3B2NsqHjWsW+ZktcLQeMTgFqFtifJHbiD10zuhR7RMNNAXeWf8A1SDuMptjVw4SAcVj+cNyGX7kqwNg=="],
 
     "@iotaledger/sagat": ["@iotaledger/sagat@workspace:sdk"],
 
@@ -1113,6 +1115,10 @@
     "@eslint/eslintrc/globals": ["globals@14.0.0", "", {}, "sha512-oahGvuMGQlPw/ivIYBjVSrWAfWLBeku5tpPE2fOPLi+WHffIWbuh2tCjhyQhTBPMf5E9jDEH4FOmTYgYwbKwtQ=="],
 
     "@eslint/eslintrc/ignore": ["ignore@5.3.2", "", {}, "sha512-hsBTNUqQTDwkWtcdYI2i06Y/nUBEsNEDJKjWdigLvegy8kDuJAS8uRlpkkcQpyEXL0Z/pjDy5HBmMjRCJ2gq+g=="],
+
+    "@iota/iota-names-sdk/@iota/iota-sdk": ["@iota/iota-sdk@1.6.1", "", { "dependencies": { "@graphql-typed-document-node/core": "^3.2.0", "@iota/bcs": "1.2.0", "@noble/curves": "^1.4.2", "@noble/hashes": "^1.4.0", "@scure/bip32": "^1.4.0", "@scure/bip39": "^1.3.0", "@suchipi/femver": "^1.0.0", "bech32": "^2.0.0", "bignumber.js": "^9.1.1", "gql.tada": "^1.8.2", "graphql": "^16.9.0", "tweetnacl": "^1.0.3", "valibot": "^0.36.0" } }, "sha512-V7rx7m9erCn9lr4hNZVMtwmka2NsoTZ9EFSE4ZqEDO44cWdheM61+i/y5HJhvvmYAb/kkDfSmfdmzLaGTbVVYg=="],
+
+    "@iota/iota-names-sdk/@noble/hashes": ["@noble/hashes@1.8.0", "", {}, "sha512-jCs9ldd7NwzpgXDIf6P3+NrHh9/sD6CQdxHyjQI+h/6rDNo88ypBxxz45UDuZHz9r3tNz7N/VInSVoVdtXEI4A=="],
 
     "@iota/iota-sdk/@noble/hashes": ["@noble/hashes@1.8.0", "", {}, "sha512-jCs9ldd7NwzpgXDIf6P3+NrHh9/sD6CQdxHyjQI+h/6rDNo88ypBxxz45UDuZHz9r3tNz7N/VInSVoVdtXEI4A=="],
 
