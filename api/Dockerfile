@@ -1,5 +1,5 @@
 # Sagat API Backend
-FROM oven/bun:1.2.23 AS base
+FROM oven/bun:1.3.1 AS base
 
 # Install system dependencies including postgres drivers
 RUN apt-get update && apt-get install -y \
