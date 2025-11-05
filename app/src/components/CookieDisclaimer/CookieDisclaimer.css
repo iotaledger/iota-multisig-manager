@@ -1,0 +1,71 @@
+@reference "../../index.css";
+
+#skcm-cookie-disclaimer#skcm-cookie-disclaimer {
+	@apply max-w-none w-full flex flex-col py-6 px-8 bottom-0 right-0 rounded-none shadow-[0_25px_50px_-12px_rgba(0,0,0,0.30)];
+}
+
+@media (max-width: 767.98px) {
+	#skcm-cookie-disclaimer#skcm-cookie-disclaimer {
+		@apply px-0;
+	}
+
+	#skcm-cookie-disclaimer#skcm-cookie-disclaimer > * + * {
+		@apply mt-4;
+	}
+}
+
+@media (min-width: 768px) {
+	#skcm-cookie-disclaimer#skcm-cookie-disclaimer {
+		@apply flex-row gap-4 py-4 px-8 bottom-6 right-6 rounded-md max-w-xl;
+	}
+}
+
+#skcm-cookie-disclaimer#skcm-cookie-disclaimer
+	#skcm-cookie-disclaimer__body {
+	@apply flex flex-col items-center justify-center;
+}
+
+@media (max-width: 767.98px) {
+	#skcm-cookie-disclaimer#skcm-cookie-disclaimer
+		#skcm-cookie-disclaimer__body {
+		@apply px-4 mx-auto;
+	}
+}
+
+@media (min-width: 768px) {
+	#skcm-cookie-disclaimer#skcm-cookie-disclaimer
+		#skcm-cookie-disclaimer__body {
+		@apply items-start;
+	}
+}
+
+#skcm-cookie-disclaimer#skcm-cookie-disclaimer
+	#skcm-cookie-disclaimer__body
+	#skcm-body {
+	@apply m-0;
+}
+
+#skcm-cookie-disclaimer#skcm-cookie-disclaimer
+	#skcm-cookie-disclaimer__body
+	#skcm-body
+	a {
+	@apply text-blue-600 transition-[color,opacity] duration-150 ease-in-out hover:opacity-80;
+}
+
+#skcm-cookie-disclaimer#skcm-cookie-disclaimer
+	#skcm-cookie-disclaimer__buttons {
+	@apply flex flex-col;
+}
+
+@media (max-width: 767.98px) {
+	#skcm-cookie-disclaimer#skcm-cookie-disclaimer
+		#skcm-cookie-disclaimer__buttons {
+		@apply px-4 mx-auto;
+	}
+}
+
+#skcm-cookie-disclaimer#skcm-cookie-disclaimer
+	#skcm-cookie-disclaimer__buttons
+	button {
+	@apply capitalize text-(--btn-text-color-default) bg-neutral-200 rounded-md py-3 px-5 w-full min-w-30 transition-[background-color,color,opacity] duration-150 ease-in-out hover:opacity-80;
+}

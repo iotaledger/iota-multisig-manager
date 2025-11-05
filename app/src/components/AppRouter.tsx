@@ -15,6 +15,7 @@ import {
 import { TOOLS } from '../config/tools';
 import { useApiAuth } from '../contexts/ApiAuthContext';
 import { AuthPrompt } from './AuthPrompt';
+import { CookiePolicyPage } from './CookiePolicyPage';
 import { CreateMultisigPage } from './CreateMultisigPage';
 import { CustomWalletButton } from './CustomWalletButton';
 import { InvitationsPage } from './InvitationsPage';
@@ -94,6 +95,11 @@ const routes: RouteConfig[] = [
 				authLevel: 'full',
 			},
 		],
+	},
+	{
+		path: '/cookie-policy',
+		element: <CookiePolicyPage />,
+		authLevel: 'public',
 	},
 ];
 

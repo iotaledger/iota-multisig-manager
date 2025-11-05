@@ -1,5 +1,5 @@
 # Sagat API Backend
-FROM oven/bun:1.2.23 AS base
+FROM oven/bun:1.3.1 AS base
 
 # Install system dependencies including postgres drivers
 RUN apt-get update && apt-get install -y \
@@ -47,4 +47,4 @@ USER sagat
 EXPOSE 3000
 
 # Start the API server (production mode - run built file)
-CMD ["bun", "run", "dist/index.js"]
+CMD ["sh", "-c", "bun db:migrate && bun run dist/index.js"]

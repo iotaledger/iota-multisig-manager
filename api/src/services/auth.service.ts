@@ -161,7 +161,7 @@ export const connectToPublicKey = async (c: Context) => {
 			JWT_COOKIE_NAME,
 			await issueJwt(pubKeys, 'cookie'),
 			{
-				sameSite: 'Lax',
+				sameSite: 'None',
 				secure: true,
 				httpOnly: true,
 				path: '/',
@@ -180,7 +180,9 @@ export const connectToPublicKey = async (c: Context) => {
 		}
 
 		return c.json({ success: true });
-	} catch {
+	} catch (e) {
+		// eslint-disable-next-line no-console
+		console.error('Error in connectToPublicKey:', e);
 		authAttempts.inc({ status: 'failed' });
 		return c.json({ error: 'Authentication failed' }, 500);
 	}
@@ -228,7 +230,9 @@ export const authMiddleware = async (
 
 		c.set('publicKeys', keys);
 		return await next();
-	} catch {
+	} catch (e) {
+		// eslint-disable-next-line no-console
+		console.error('Error in authMiddleware:', e);
 		return c.text('Unauthorized', 401);
 	}
 };
@@ -273,7 +277,7 @@ export const disconnect = async (c: Context) => {
 		path: '/',
 		secure: true,
 		httpOnly: true,
-		sameSite: 'Lax', // Match the cookie setting
+		sameSite: 'None', // Match the cookie setting
 	});
 	activeJwtTokens.dec();
 	return c.json({ success: true });
