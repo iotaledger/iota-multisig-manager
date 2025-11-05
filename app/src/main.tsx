@@ -8,6 +8,7 @@ import ReactDOM from 'react-dom/client';
 import '@iota/dapp-kit/dist/index.css';
 import './index.css';
 
+import { CookieManagerProvider } from '@boxfish-studio/react-cookie-manager';
 import {
 	IotaClientProvider,
 	WalletProvider,
@@ -19,6 +20,7 @@ import {
 import { Toaster } from 'sonner';
 
 import App from './App.tsx';
+import { CookieDisclaimer } from './components/CookieDisclaimer';
 import { ApiAuthProvider } from './contexts/ApiAuthContext.tsx';
 import { CONFIG } from './lib/constants';
 import { networkConfig } from './networkConfig.ts';
@@ -42,7 +44,10 @@ ReactDOM.createRoot(
 			>
 				<WalletProvider autoConnect>
 					<ApiAuthProvider>
-						<App />
+						<CookieManagerProvider>
+							<App />
+							<CookieDisclaimer />
+						</CookieManagerProvider>
 					</ApiAuthProvider>
 				</WalletProvider>
 			</IotaClientProvider>

@@ -114,6 +114,16 @@
 	--sidebar-ring: oklch(0.556 0 0);
 }
 
+body,
+#root {
+	height: 100dvh;
+}
+
+#root {
+	display: flex;
+	flex-direction: column;
+}
+
 @layer base {
 	* {
 		@apply border-border outline-ring/50;
