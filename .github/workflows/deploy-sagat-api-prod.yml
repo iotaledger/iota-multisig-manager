@@ -30,6 +30,7 @@ jobs:
         run: |
           COMMIT_HASH=$(git rev-parse --short HEAD)
           echo "VERSION=$COMMIT_HASH" >> $GITHUB_ENV
+          ls -al
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v2
