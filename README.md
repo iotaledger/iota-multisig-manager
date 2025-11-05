@@ -24,19 +24,23 @@ Start postgres locally using Docker:
 docker compose up postgres -d
 ```
 
+Install dependencies:
+
+```sh
+bun install
+```
+
 The first time run the migrations to create the database schema:
 
 ```sh
 (cd api && bun run db:migrate)
 ```
 
-Then you can run, from the root of the repository:
+Then build the SDK and spin up the frontend and API:
 
 ```sh
-bun install
 bun run dev
 ```
 
-This will build the SDK and spin up the frontend and the API.
 They are all in "watch" mode, so all changes would reflect as you are
 developing.
