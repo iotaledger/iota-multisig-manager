@@ -20,11 +20,11 @@ jobs:
       deployments: write
       issues: write
     steps:
-      - uses: actions/checkout@v3
-      - uses: pnpm/action-setup@fe02b34f77f8bc703788d5817da081398fad5dd2 # pin@v4.0.0
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
 
       - name: Install Vercel CLI
-        run: pnpm add --global vercel@canary
+        run: bun add --global vercel@canary
 
       - name: Pull Vercel Environment Information
         run: vercel pull --token=${{ secrets.VERCEL_TOKEN }} --yes --environment=production
