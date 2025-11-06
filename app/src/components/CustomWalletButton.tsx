@@ -506,7 +506,7 @@ const NotConnectedWalletVariant = ({
 							<AlertTriangle className="w-6 h-6 text-muted-foreground mx-auto mb-3" />
 							<p className="text-sm text-muted-foreground">
 								No wallets found.
-								<br /> Install a wallet (e.g. Slush Wallet)
+								<br /> Install a wallet (e.g. IOTA Wallet)
 								to continue.
 							</p>
 						</div>
