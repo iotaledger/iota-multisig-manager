@@ -1,0 +1,3 @@
+[install]
+# Only install package versions that are at least 1 day old 
+minimumReleaseAge = 86400
