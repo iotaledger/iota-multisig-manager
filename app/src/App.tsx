@@ -17,8 +17,8 @@ function AppContent() {
 	const [isBannerDismissed, setIsBannerDismissed] =
 		useState(false);
 	const location = useLocation();
-	const hideHeaderOnPaths = ['/create'];
-	const hideBannerOnPaths = ['/create'];
+	const hideHeaderOnPaths = ['/create', '/import'];
+	const hideBannerOnPaths = ['/create', '/import'];
 
 	// Hide banner on tools pages (public/offline pages)
 	const shouldHideHeader = hideHeaderOnPaths.includes(

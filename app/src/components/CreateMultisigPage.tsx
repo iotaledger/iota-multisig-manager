@@ -190,10 +190,16 @@ export function CreateMultisigPage() {
 							<h1 className="text-3xl font-bold text-slate-900 mb-4">
 								Create New Multisig
 							</h1>
-							<p className="text-slate-600 mt-12">
+							<p className="text-slate-600 mt-4">
 								Learn about multisig wallets and how to set
 								them up securely.
 							</p>
+							<Link
+								to="/import"
+								className="inline-flex items-center text-sm text-blue-600 hover:text-blue-800 mt-4"
+							>
+								Import existing multisig instead →
+							</Link>
 						</div>
 
 						<MultisigPageFAQ />

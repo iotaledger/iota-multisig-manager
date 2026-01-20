@@ -18,6 +18,7 @@ import { AuthPrompt } from './AuthPrompt';
 import { CookiePolicyPage } from './CookiePolicyPage';
 import { CreateMultisigPage } from './CreateMultisigPage';
 import { CustomWalletButton } from './CustomWalletButton';
+import { ImportMultisigPage } from './ImportMultisigPage';
 import { InvitationsPage } from './InvitationsPage';
 import { MultisigDetailPage } from './MultisigDetailPage';
 import { ProposalDetailPage } from './ProposalDetailPage';
@@ -62,6 +63,11 @@ const routes: RouteConfig[] = [
 	{
 		path: '/create',
 		element: <CreateMultisigPage />,
+		authLevel: 'full',
+	},
+	{
+		path: '/import',
+		element: <ImportMultisigPage />,
 		authLevel: 'full',
 	},
 	{

@@ -100,6 +100,20 @@ export class SagatClient {
 		);
 	}
 
+	async importMultisig(data: {
+		address: string;
+		name?: string;
+		network: string;
+	}): Promise<{
+		multisig: Multisig;
+		members: MultisigMember[];
+	}> {
+		return this.#request('/multisig/import', {
+			method: 'POST',
+			body: JSON.stringify(data),
+		});
+	}
+
 	async acceptMultisigInvite(
 		address: string,
 		data: SignedMessageRequest,

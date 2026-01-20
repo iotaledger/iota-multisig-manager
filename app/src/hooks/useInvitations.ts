@@ -45,6 +45,7 @@ export function useInvitations(
 					(member) =>
 						member.publicKey === currentAddress.publicKey,
 				)!;
+
 				return {
 					...m,
 					isAccepted: currentMember.isAccepted,

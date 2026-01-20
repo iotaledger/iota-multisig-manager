@@ -32,6 +32,8 @@ import {
 	validateExpiry,
 	type AuthEnv,
 } from '../services/auth.service';
+import { extractMultisigFromBlockchain } from '../services/blockchain.service';
+import { validateUserIsMember } from '../services/import.service';
 import {
 	getMultisig,
 	isMultisigFinalized,
@@ -39,6 +41,7 @@ import {
 	jwtHasMultisigMemberAccess,
 	validateQuorum,
 } from '../services/multisig.service';
+import type { IotaNetwork } from '../utils/client';
 import {
 	getPublicKeyFromSerializedSignature,
 	parsePublicKey,
@@ -165,6 +168,98 @@ multisigRouter.post(
 		});
 
 		return c.json(database);
+	},
+);
+
+multisigRouter.post(
+	'/import',
+	authMiddleware,
+	async (c: Context<AuthEnv>) => {
+		const {
+			address,
+			name,
+			network,
+		}: {
+			address: string;
+			name?: string;
+			network: IotaNetwork;
+		} = await c.req.json();
+
+		if (!isValidIotaAddress(address)) {
+			throw new ValidationError('Invalid IOTA address');
+		}
+
+		const authorizedPubKeys = c.get('publicKeys');
+
+		const existing =
+			await db.query.SchemaMultisigs.findFirst({
+				where: eq(SchemaMultisigs.address, address),
+			});
+
+		if (existing) {
+			throw new ValidationError(
+				'This multisig has already been imported to the system',
+			);
+		}
+
+		const multisigInfo =
+			await extractMultisigFromBlockchain(address, network);
+
+		// console.log('multisigInfo', multisigInfo);
+		// return c.json(multisigInfo);
+
+		if (multisigInfo.address !== address) {
+			throw new ValidationError(
+				'Address mismatch - invalid multisig',
+			);
+		}
+
+		const userIsMember = validateUserIsMember(
+			authorizedPubKeys,
+			multisigInfo.members,
+		);
+
+		if (!userIsMember) {
+			throw new ValidationError(
+				'You must be a member of the multisig to import it',
+			);
+		}
+
+		await registerPublicKeyStrings(
+			multisigInfo.members.map((m) => m.publicKey),
+		);
+
+		const result = await db.transaction(async (tx) => {
+			const msig = (
+				await tx
+					.insert(SchemaMultisigs)
+					.values({
+						address: multisigInfo.address,
+						threshold: multisigInfo.threshold,
+						name,
+						isVerified: true, // Mark as verified since it's imported from the blockchain
+					})
+					.returning()
+			)[0];
+
+			// Insert members - auto-accept all imported members
+			const members = await tx
+				.insert(SchemaMultisigMembers)
+				.values(
+					multisigInfo.members.map((member, index) => ({
+						multisigAddress: msig.address,
+						publicKey: member.publicKey,
+						weight: member.weight,
+						order: index,
+						isAccepted: true, // Auto-accept all imported members
+					})),
+				)
+				.returning();
+
+			return { multisig: msig, members };
+		});
+
+		return c.json(result);
 	},
 );
 
