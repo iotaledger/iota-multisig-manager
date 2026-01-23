@@ -101,9 +101,8 @@ export function ProposalCard({
 
 	const getProposalTitle = () => {
 		// Use description if available, otherwise use a truncated digest
-		if (proposal.description?.trim()) {
-			const length = proposal.description.trim().length;
-			return `${proposal.description.trim().slice(0, 50)}${length > 50 ? '...' : ''}`;
+		if (proposal.description) {
+			return proposal.description;
 		}
 		return `Transaction ${formatDigest(proposal.digest)}`;
 	};
@@ -174,18 +173,20 @@ export function ProposalCard({
 		<div className="bg-white border rounded-lg hover:shadow-sm transition-shadow">
 			{/* Main proposal row */}
 			<div className="flex items-start justify-between p-4 max-md:flex-col max-md:gap-3">
-				<div className="flex-1">
-					<div className="flex max-md:flex-wrap items-center gap-2 mb-2">
-						<h4 className="font-medium text-gray-900 line-clamp-1">
+				<div className="flex-1 min-w-0">
+					<div className="flex max-md:flex-wrap items-start gap-2 mb-2">
+						<h4 className="font-medium text-gray-900 wrap-break-word flex-1 min-w-0">
 							{getProposalTitle()}
 						</h4>
-						{getStatusBadge()}
-						{getSignatureStatus()}
-						{isExternalProposer() && (
-							<Label variant="purple">
-								External Proposer
-							</Label>
-						)}
+						<div className="flex items-center gap-2 flex-wrap">
+							{getStatusBadge()}
+							{getSignatureStatus()}
+							{isExternalProposer() && (
+								<Label variant="purple">
+									External Proposer
+								</Label>
+							)}
+						</div>
 					</div>
 
 					<div className="flex items-center gap-4 text-xs text-gray-500 flex-wrap">
