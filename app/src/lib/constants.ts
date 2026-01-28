@@ -19,7 +19,7 @@ export const CONFIG = {
 	MIN_THRESHOLD: 1,
 
 	// Network
-	DEFAULT_NETWORK: 'testnet' as const,
+	DEFAULT_NETWORK: 'mainnet' as const,
 
 	// Pagination
 	DEFAULT_PAGE_SIZE: 20,
