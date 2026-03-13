@@ -19,7 +19,7 @@
 		"@iota/apps-ui-icons": "^0.4.2",
 		"@iota/dapp-kit": "^0.7.0",
 		"@iota/iota-sdk": "^1.7.1",
-		"@iotaledger/sagat": "workspace:*",
+		"@iotaledger/iota-multisig-manager": "workspace:*",
 		"@noble/hashes": "^2.0.1",
 		"@radix-ui/react-accordion": "^1.2.12",
 		"@radix-ui/react-dialog": "^1.1.15",

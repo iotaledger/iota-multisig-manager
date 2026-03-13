@@ -5,7 +5,7 @@
 import {
 	ProposalStatus,
 	type ProposalWithSignatures,
-} from '@iotaledger/sagat';
+} from '@iotaledger/iota-multisig-manager';
 
 import { useApiAuth } from '@/contexts/ApiAuthContext';
 import { type MultisigWithMembersForPublicKey } from '@/lib/types';

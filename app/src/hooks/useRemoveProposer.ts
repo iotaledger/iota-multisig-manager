@@ -9,7 +9,7 @@ import {
 import {
 	defaultExpiry,
 	PersonalMessages,
-} from '@iotaledger/sagat';
+} from '@iotaledger/iota-multisig-manager';
 import {
 	useMutation,
 	useQueryClient,

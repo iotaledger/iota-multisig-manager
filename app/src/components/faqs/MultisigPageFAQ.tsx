@@ -24,7 +24,7 @@ const faqData: FAQItem[] = [
 		icon: Users,
 		question: 'What is a multisig wallet?',
 		answer:
-			'IOTA has native multisig support, and Sagat enables you to create multisigs, create/aggregate signatures for proposals and be part of multiple schemes.',
+			'IOTA has native multisig support, and IOTA Multisig Manager enables you to create multisigs, create/aggregate signatures for proposals and be part of multiple schemes.',
 	},
 	{
 		id: 'how-threshold-works',

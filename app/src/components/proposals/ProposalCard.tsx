@@ -10,7 +10,7 @@ import {
 import {
 	ProposalStatus,
 	type ProposalWithSignatures,
-} from '@iotaledger/sagat';
+} from '@iotaledger/iota-multisig-manager';
 import {
 	CheckCircle,
 	ChevronDown,

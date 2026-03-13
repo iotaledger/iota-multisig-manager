@@ -7,7 +7,7 @@ import { MultiSigPublicKey } from '@iota/iota-sdk/multisig';
 import {
 	ProposalStatus,
 	type PublicProposal,
-} from '@iotaledger/sagat';
+} from '@iotaledger/iota-multisig-manager';
 import {
 	useMutation,
 	useQueryClient,

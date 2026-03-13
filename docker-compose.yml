@@ -4,10 +4,10 @@ services:
   # PostgreSQL Database
   postgres:
     image: postgres:16-alpine
-    container_name: sagat-postgres
+    container_name: iota-multisig-manager-postgres
     environment:
-      POSTGRES_USER: sagat
-      POSTGRES_PASSWORD: sagat_dev_password
+      POSTGRES_USER: iota-multisig-manager
+      POSTGRES_PASSWORD: iota-multisig-manager_dev_password
       POSTGRES_DB: multisig_db
     ports:
       - '5432:5432'
@@ -15,22 +15,25 @@ services:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
       test:
-        ['CMD-SHELL', 'pg_isready -U sagat -d multisig_db']
+        [
+          'CMD-SHELL',
+          'pg_isready -U iota-multisig-manager -d multisig_db',
+        ]
       interval: 10s
       timeout: 5s
       retries: 5
 
-  # Sagat API Backend
+  # IOTA Multisig Manager API Backend
   api:
     build:
       context: .
       dockerfile: api/Dockerfile
-    container_name: sagat-api
+    container_name: iota-multisig-manager-api
     depends_on:
       postgres:
         condition: service_healthy
     environment:
-      DATABASE_URL: postgresql://sagat:sagat_dev_password@postgres:5432/multisig_db
+      DATABASE_URL: postgresql://iota-multisig-manager:iota-multisig-manager_dev_password@postgres:5432/multisig_db
       JWT_SECRET: dev_jwt_secret_change_in_production
       SUPPORTED_NETWORKS: testnet,mainnet
       CORS_ALLOWED_ORIGINS: http://localhost:5173,http://localhost:3001
@@ -48,7 +51,7 @@ services:
       retries: 3
       start_period: 40s
 
-  # Sagat Frontend App
+  # IOTA Multisig Manager Frontend App
   app:
     build:
       context: .
@@ -58,7 +61,7 @@ services:
         VITE_API_URL: http://localhost:3000
         VITE_IOTA_NETWORKS: testnet,mainnet
         VITE_DEFAULT_NETWORK: testnet
-    container_name: sagat-app
+    container_name: iota-multisig-manager-app
     depends_on:
       api:
         condition: service_healthy

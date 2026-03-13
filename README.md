@@ -1,6 +1,6 @@
-# Sagat - IOTA Multisig Management Platform
+# IOTA Multisig Manager
 
-Sagat is a full-stack application for managing IOTA blockchain multisig wallets, built with a Bun/TypeScript API backend and React frontend.
+IOTA Multisig Manager is a full-stack application for managing IOTA blockchain multisig wallets, built with a Bun/TypeScript API backend and React frontend.
 
 ## Architecture
 

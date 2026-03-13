@@ -27,7 +27,7 @@ export function AuthPrompt() {
 
 				<p className="text-gray-600 mb-8">
 					Sign a message to securely connect your wallet to
-					Sagat
+					IOTA Multisig Manager
 				</p>
 
 				<div className="bg-gray-50 rounded-lg p-6 mb-8 space-y-3 max-w-lg mx-auto">

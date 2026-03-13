@@ -11,7 +11,7 @@ import {
 	PersonalMessages,
 	type Address,
 	type AuthCheckResponse,
-} from '@iotaledger/sagat';
+} from '@iotaledger/iota-multisig-manager';
 import {
 	useMutation,
 	useQuery,

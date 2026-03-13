@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { type PublicKey } from '@iota/iota-sdk/cryptography';
-import { PersonalMessages } from '@iotaledger/sagat';
+import { PersonalMessages } from '@iotaledger/iota-multisig-manager';
 import { type Context } from 'hono';
 import {
 	deleteCookie,

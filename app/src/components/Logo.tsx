@@ -55,15 +55,8 @@ export function Logo({
 				<span
 					className={`${classes.text} font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent`}
 				>
-					SAGAT
+					IOTA Multisig Manager
 				</span>
-				{showSubtitle && (
-					<span
-						className={`${classes.subtitle} text-gray-400 -mt-0.5`}
-					>
-						IOTA Multisig Manager
-					</span>
-				)}
 			</div>
 		</div>
 	);
