@@ -20,10 +20,10 @@
       },
     },
     "api": {
-      "name": "sagat-api",
+      "name": "iota-multisig-manager-api",
       "dependencies": {
         "@iota/iota-sdk": "^1.7.1",
-        "@iotaledger/sagat": "workspace:*",
+        "@iotaledger/iota-multisig-manager": "workspace:*",
         "dataloader": "^2.2.3",
         "drizzle-orm": "^0.44.5",
         "hono": "^4.9.8",
@@ -50,7 +50,7 @@
         "@iota/apps-ui-icons": "^0.4.2",
         "@iota/dapp-kit": "^0.7.0",
         "@iota/iota-sdk": "^1.7.1",
-        "@iotaledger/sagat": "workspace:*",
+        "@iotaledger/iota-multisig-manager": "workspace:*",
         "@noble/hashes": "^2.0.1",
         "@radix-ui/react-accordion": "^1.2.12",
         "@radix-ui/react-dialog": "^1.1.15",
@@ -91,7 +91,7 @@
       },
     },
     "sdk": {
-      "name": "@iotaledger/sagat",
+      "name": "@iotaledger/iota-multisig-manager",
       "version": "0.0.1",
       "devDependencies": {
         "@types/bun": "latest",
@@ -271,7 +271,7 @@
 
     "@iota/wallet-standard": ["@iota/wallet-standard@0.2.17", "", { "dependencies": { "@iota/iota-sdk": "1.7.1", "@wallet-standard/core": "1.0.3" } }, "sha512-Xu8tg88CqxxustDZXEN2x/mYAeUlEOFZW6deBKINe7C/1SNHLWOwbTKfyouXDrAyOqVxJF7T0tkln6klKVH36Q=="],
 
-    "@iotaledger/sagat": ["@iotaledger/sagat@workspace:sdk"],
+    "@iotaledger/iota-multisig-manager": ["@iotaledger/iota-multisig-manager@workspace:sdk"],
 
     "@isaacs/cliui": ["@isaacs/cliui@8.0.2", "", { "dependencies": { "string-width": "^5.1.2", "string-width-cjs": "npm:string-width@^4.2.0", "strip-ansi": "^7.0.1", "strip-ansi-cjs": "npm:strip-ansi@^6.0.1", "wrap-ansi": "^8.1.0", "wrap-ansi-cjs": "npm:wrap-ansi@^7.0.0" } }, "sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA=="],
 
@@ -513,7 +513,7 @@
 
     "@tony.ganchev/eslint-plugin-header": ["@tony.ganchev/eslint-plugin-header@3.1.8", "", { "peerDependencies": { "eslint": ">=7.7.0" } }, "sha512-iNP3DPLE87rY6gxbPiGzIsJbETnnZSA0owasmh/s3bLq6j7dLUqDweEVXmxZno3RtwFPrNCwWILwRjTHPTDKuQ=="],
 
-    "@types/bun": ["@types/bun@1.3.2", "", { "dependencies": { "bun-types": "1.3.2" } }, "sha512-t15P7k5UIgHKkxwnMNkJbWlh/617rkDGEdSsDbu+qNHTaz9SKf7aC8fiIlUdD5RPpH6GEkP0cK7WlvmrEBRtWg=="],
+    "@types/bun": ["@types/bun@1.3.10", "", { "dependencies": { "bun-types": "1.3.10" } }, "sha512-0+rlrUrOrTSskibryHbvQkDOWRJwJZqZlxrUs1u4oOoTln8+WIXBPmAuCF35SWB2z4Zl3E84Nl/D0P7803nigQ=="],
 
     "@types/estree": ["@types/estree@1.0.8", "", {}, "sha512-dWHzHa2WqEXI/O1E9OjrocMTKJl2mSrEolh1Iomrv6U+JuNwaHXsXx9bLu5gG7BUWFIN0skIQJQ/L1rIex4X6w=="],
 
@@ -627,7 +627,7 @@
 
     "buffer-from": ["buffer-from@1.1.2", "", {}, "sha512-E+XQCRwSbaaiChtv6k6Dwgc+bx+Bs6vuKJHHl5kox/BaKbhiXzqQOwK4cO22yElGp2OCmjwVhT3HmxgyPGnJfQ=="],
 
-    "bun-types": ["bun-types@1.3.2", "", { "dependencies": { "@types/node": "*" }, "peerDependencies": { "@types/react": "^19" } }, "sha512-i/Gln4tbzKNuxP70OWhJRZz1MRfvqExowP7U6JKoI8cntFrtxg7RJK3jvz7wQW54UuvNC8tbKHHri5fy74FVqg=="],
+    "bun-types": ["bun-types@1.3.10", "", { "dependencies": { "@types/node": "*" } }, "sha512-tcpfCCl6XWo6nCVnpcVrxQ+9AYN1iqMIzgrSKYMB/fjLtV2eyAVEg7AxQJuCq/26R6HpKWykQXuSOq/21RYcbg=="],
 
     "bundle-require": ["bundle-require@5.1.0", "", { "dependencies": { "load-tsconfig": "^0.2.3" }, "peerDependencies": { "esbuild": ">=0.18" } }, "sha512-3WrrOuZiyaaZPWiEt4G3+IffISVC9HYlWueJEBWED4ZH4aIAC2PnkdnuRrR94M+w6yGWn4AglWtJtBI8YqvgoA=="],
 
@@ -826,6 +826,8 @@
     "inflight": ["inflight@1.0.6", "", { "dependencies": { "once": "^1.3.0", "wrappy": "1" } }, "sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA=="],
 
     "inherits": ["inherits@2.0.4", "", {}, "sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ=="],
+
+    "iota-multisig-manager-api": ["iota-multisig-manager-api@workspace:api"],
 
     "is-extglob": ["is-extglob@2.1.1", "", {}, "sha512-SbKbANkN603Vi4jEZv49LeVJMn4yGwsbzZworEoyEiutsN3nJYdbO36zfhGJ6QEDpOZIFkDtnq5JRxmvl3jsoQ=="],
 
@@ -1070,8 +1072,6 @@
     "run-parallel": ["run-parallel@1.2.0", "", { "dependencies": { "queue-microtask": "^1.2.2" } }, "sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA=="],
 
     "rxjs": ["rxjs@7.8.2", "", { "dependencies": { "tslib": "^2.1.0" } }, "sha512-dhKf903U/PQZY6boNNtAGdWbG85WAbjT/1xYoZIC7FAY0yWapOBQVsVrDl58W86//e1VpMNBtRV4MaXfdMySFA=="],
-
-    "sagat-api": ["sagat-api@workspace:api"],
 
     "sass": ["sass@1.93.3", "", { "dependencies": { "chokidar": "^4.0.0", "immutable": "^5.0.2", "source-map-js": ">=0.6.2 <2.0.0" }, "optionalDependencies": { "@parcel/watcher": "^2.4.1" }, "bin": { "sass": "sass.js" } }, "sha512-elOcIZRTM76dvxNAjqYrucTSI0teAF/L2Lv0s6f6b7FOwcwIuA357bIE871580AjHJuSvLIRUosgV+lIWx6Rgg=="],
 
