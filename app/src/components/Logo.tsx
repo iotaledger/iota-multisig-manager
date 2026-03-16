@@ -6,13 +6,11 @@ import { LucideLock } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface LogoProps {
-	showSubtitle?: boolean;
 	size?: 'sm' | 'md' | 'lg';
 	asLink?: boolean;
 }
 
 export function Logo({
-	showSubtitle = true,
 	size = 'md',
 	asLink = true,
 }: LogoProps) {
