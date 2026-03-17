@@ -1,3 +1,9 @@
+/*
+ * Styles for MDX-rendered legal pages (Terms of Use, Privacy Policy).
+ * Typography values match those used by the Cookie library (@boxfish-studio/react-cookie-manager)
+ * so all legal pages look consistent
+ */
+
 .legal-content h1 {
 	margin-top: 0;
 	margin-bottom: 0;
