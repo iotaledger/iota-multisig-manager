@@ -6,9 +6,10 @@ import { Link } from 'react-router-dom';
 
 const FOOTER_LINKS = [
 	{
-		text: 'Terms & Conditions',
-		url: 'https://www.iota.org/terms-of-use',
+		text: 'Terms of Use',
+		url: '/terms-of-service',
 	},
+	{ text: 'Privacy Policy', url: '/privacy-policy' },
 	{ text: 'Cookie Policy', url: '/cookie-policy' },
 ];
 
@@ -22,7 +23,8 @@ export function Footer() {
 							<IotaLogoWeb height="auto" width={120} />
 						</Link>
 						<span className="text-neutral-800">
-							© IOTA Foundation {new Date().getFullYear()}
+							© IOTA Ecosystem DLT Foundation{' '}
+							{new Date().getFullYear()}
 						</span>
 					</div>
 
