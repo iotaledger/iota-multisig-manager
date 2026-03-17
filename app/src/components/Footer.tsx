@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const FOOTER_LINKS = [
 	{
 		text: 'Terms of Use',
-		url: '/terms-of-service',
+		url: '/terms-of-use',
 	},
 	{ text: 'Privacy Policy', url: '/privacy-policy' },
 	{ text: 'Cookie Policy', url: '/cookie-policy' },

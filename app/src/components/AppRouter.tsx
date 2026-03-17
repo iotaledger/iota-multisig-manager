@@ -52,7 +52,7 @@ const routes: RouteConfig[] = [
 		authLevel: 'public' as AuthLevel,
 	})),
 	{
-		path: '/terms-of-service',
+		path: '/terms-of-use',
 		element: <TermsOfUsePage />,
 		authLevel: 'public',
 	},
