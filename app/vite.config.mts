@@ -11,7 +11,10 @@ import vercel from 'vite-plugin-vercel';
 // MDX must run before @vitejs/plugin-react-swc. Without enforce: 'pre',
 // react-swc receives raw .mdx source and fails to parse it as JSX,
 // throwing a syntax error on the first line of every MDX file.
-const mdxPlugin = { enforce: 'pre' as const, ...mdx({ remarkPlugins: [remarkGfm] }) };
+const mdxPlugin = {
+	enforce: 'pre' as const,
+	...mdx({ remarkPlugins: [remarkGfm] }),
+};
 
 export default defineConfig({
 	plugins: [mdxPlugin, react(), tailwindcss(), vercel()],

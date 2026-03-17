@@ -21,12 +21,12 @@ import { CustomWalletButton } from './CustomWalletButton';
 import { InvitationsPage } from './InvitationsPage';
 import { MultisigDetailPage } from './MultisigDetailPage';
 import { PrivacyPolicyPage } from './PrivacyPolicyPage';
-import { TermsOfUsePage } from './TermsOfUsePage';
 import { ProposalDetailPage } from './ProposalDetailPage';
 import { SmartDashboard } from './SmartDashboard';
 import { AssetsTab } from './tabs/AssetsTab';
 import { OverviewTab } from './tabs/OverviewTab';
 import { ProposalsTab } from './tabs/ProposalsTab';
+import { TermsOfUsePage } from './TermsOfUsePage';
 import { ToolsPage } from './ToolsPage';
 import { Loading } from './ui/loading';
 
