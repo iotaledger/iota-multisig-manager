@@ -2,79 +2,54 @@
 // Modifications Copyright (c) 2025 IOTA Stiftung
 // SPDX-License-Identifier: Apache-2.0
 
-import { LucideLock } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface LogoProps {
-	showSubtitle?: boolean;
 	size?: 'sm' | 'md' | 'lg';
 	asLink?: boolean;
 }
 
 export function Logo({
-	showSubtitle = true,
 	size = 'md',
 	asLink = true,
 }: LogoProps) {
-	const sizeClasses = {
-		sm: {
-			icon: 'w-4 h-4',
-			iconPadding: 'p-1.5',
-			text: 'text-lg',
-			subtitle: 'text-xs',
-		},
-		md: {
-			icon: 'w-5 h-5',
-			iconPadding: 'p-2',
-			text: 'text-xl',
-			subtitle: 'text-xs',
-		},
-		lg: {
-			icon: 'w-6 h-6',
-			iconPadding: 'p-2.5',
-			text: 'text-2xl',
-			subtitle: 'text-sm',
-		},
+	const sizeConfig = {
+		sm: { height: 30 },
+		md: { height: 40 },
+		lg: { height: 50 },
 	};
 
-	const classes = sizeClasses[size];
+	const { height } = sizeConfig[size];
 
 	const logoContent = (
-		<div className="flex items-center gap-2">
-			<div className="relative">
-				<div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg opacity-90 group-hover:opacity-100 transition-opacity"></div>
-				<div
-					className={`relative bg-gradient-to-br from-blue-500 to-purple-500 ${classes.iconPadding} rounded-lg shadow-sm`}
-				>
-					<LucideLock
-						className={`${classes.icon} text-white`}
-					/>
-				</div>
-			</div>
-			<div className="flex flex-col">
-				<span
-					className={`${classes.text} font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent`}
-				>
-					SAGAT
-				</span>
-				{showSubtitle && (
-					<span
-						className={`${classes.subtitle} text-gray-400 -mt-0.5`}
-					>
-						IOTA Multisig Manager
-					</span>
-				)}
-			</div>
+		<div className="relative inline-block transition-transform duration-300 ease-out hover:scale-105">
+			{/* Desktop Logo */}
+			<img
+				src="/iota-multisig-manager.svg"
+				alt="IOTA Multisig Manager"
+				style={{ height: `${height}px` }}
+				className="hidden md:block h-auto w-auto opacity-90 hover:opacity-100 transition-opacity duration-300"
+			/>
+			{/* Mobile Logo */}
+			<img
+				src="/iota-multisig-manager-mobile.svg"
+				alt="IOTA"
+				style={{ height: `${height}px` }}
+				className="block md:hidden h-auto w-auto opacity-90 hover:opacity-100 transition-opacity duration-300"
+			/>
 		</div>
 	);
 
 	if (asLink) {
 		return (
-			<Link to="/" className="group">
+			<Link
+				to="/"
+				className="inline-block focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-sm"
+			>
 				{logoContent}
 			</Link>
 		);
 	}
 
-	return <div className="group">{logoContent}</div>;
+	return logoContent;
 }
