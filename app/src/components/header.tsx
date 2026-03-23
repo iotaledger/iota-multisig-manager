@@ -88,7 +88,6 @@ const NavigationLinks = ({
 						</Button>
 					</Link>
 
-					{/* Import multisig button */}
 					<Link to="/import" onClick={onNavigate}>
 						<Button
 							variant={

@@ -205,9 +205,6 @@ multisigRouter.post(
 		const multisigInfo =
 			await extractMultisigFromBlockchain(address, network);
 
-		// console.log('multisigInfo', multisigInfo);
-		// return c.json(multisigInfo);
-
 		if (multisigInfo.address !== address) {
 			throw new ValidationError(
 				'Address mismatch - invalid multisig',
