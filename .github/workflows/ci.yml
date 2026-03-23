@@ -86,9 +86,9 @@ jobs:
       postgres:
         image: postgres:15
         env:
-          POSTGRES_USER: iota-multisig-manager
-          POSTGRES_PASSWORD: iota-multisig-manager
-          POSTGRES_DB: iota-multisig-manager_test
+          POSTGRES_USER: sagat
+          POSTGRES_PASSWORD: sagat
+          POSTGRES_DB: sagat_test
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
@@ -139,7 +139,7 @@ jobs:
         run: bun test:e2e
         working-directory: api
         env:
-          TEST_DATABASE_URL: postgresql://iota-multisig-manager:iota-multisig-manager@localhost:5432/iota-multisig-manager_test
+          TEST_DATABASE_URL: postgresql://sagat:sagat@localhost:5432/sagat_test
           JWT_SECRET: a-super-long-jwt-secret-to-use-in-the-service
           SUPPORTED_NETWORKS: localnet
           CORS_ALLOWED_ORIGINS: http://localhost:3000,http://localhost:5173
