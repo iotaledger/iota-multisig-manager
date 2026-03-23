@@ -29,7 +29,6 @@ export function validateUserIsMember(
 		(m) => m.address,
 	);
 
-	// Check if user has at least one matching address
 	return userAddresses.some((addr) =>
 		memberAddresses.includes(addr),
 	);
