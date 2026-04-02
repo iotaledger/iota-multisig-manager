@@ -114,7 +114,7 @@ export function Header() {
 	return (
 		<div className="border-b">
 			<div className="p-4 max-w-[1600px] mx-auto flex justify-between items-center">
-				{/* Logo - hide subtitle on mobile */}
+				{/* Logo - responsive */}
 				<div className="block md:hidden">
 					<Logo size="sm" />
 				</div>
