@@ -20,11 +20,13 @@ import { CreateMultisigPage } from './CreateMultisigPage';
 import { CustomWalletButton } from './CustomWalletButton';
 import { InvitationsPage } from './InvitationsPage';
 import { MultisigDetailPage } from './MultisigDetailPage';
+import { PrivacyPolicyPage } from './PrivacyPolicyPage';
 import { ProposalDetailPage } from './ProposalDetailPage';
 import { SmartDashboard } from './SmartDashboard';
 import { AssetsTab } from './tabs/AssetsTab';
 import { OverviewTab } from './tabs/OverviewTab';
 import { ProposalsTab } from './tabs/ProposalsTab';
+import { TermsOfUsePage } from './TermsOfUsePage';
 import { ToolsPage } from './ToolsPage';
 import { Loading } from './ui/loading';
 
@@ -49,6 +51,16 @@ const routes: RouteConfig[] = [
 		element: <ToolsPage />,
 		authLevel: 'public' as AuthLevel,
 	})),
+	{
+		path: '/terms-of-use',
+		element: <TermsOfUsePage />,
+		authLevel: 'public',
+	},
+	{
+		path: '/privacy-policy',
+		element: <PrivacyPolicyPage />,
+		authLevel: 'public',
+	},
 	{
 		path: '/proposals',
 		element: <ProposalDetailPage />,
