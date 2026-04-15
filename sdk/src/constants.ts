@@ -26,13 +26,13 @@ export const PersonalMessages = {
 } as const;
 
 /**
- * The default Sagat API URL.
+ * The default IOTA Multisig Manager API URL.
  */
-export const getDefaultSagatApiUrl = (
+export const getDefaultIotaMultisigManagerApiUrl = (
 	mode: 'live' | 'local',
 ) => {
 	return mode === 'live'
-		? 'https://api.sagat.iota.org'
+		? 'https://api.multisig-manager.iota.org'
 		: 'http://localhost:3000';
 };
 

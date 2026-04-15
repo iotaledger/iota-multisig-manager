@@ -5,7 +5,7 @@
 import type {
 	MultisigWithMembers,
 	PublicProposal,
-} from '@iotaledger/sagat';
+} from '@iotaledger/iota-multisig-manager';
 
 // Extended type that adds frontend-specific fields for displaying multisig state
 // for a specific public key

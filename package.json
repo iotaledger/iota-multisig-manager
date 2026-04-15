@@ -1,5 +1,5 @@
 {
-	"name": "sagat-monorepo",
+	"name": "iota-multisig-manager-monorepo",
 	"type": "module",
 	"devDependencies": {
 		"@eslint/compat": "^1.4.0",

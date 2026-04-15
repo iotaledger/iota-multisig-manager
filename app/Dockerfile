@@ -1,4 +1,4 @@
-# Sagat Frontend
+# IOTA Multisig Manager Frontend
 FROM oven/bun:1.2.23 AS base
 
 # Install system dependencies
@@ -44,14 +44,14 @@ RUN bun run build
 FROM nginx:alpine AS production
 
 # Create non-root user
-RUN addgroup -g 1001 -S sagat && \
-    adduser -S sagat -u 1001
+RUN addgroup -g 1001 -S iota-multisig-manager && \
+    adduser -S iota-multisig-manager -u 1001
 
 # Copy built app to nginx
 COPY --from=build /monorepo/app/dist /usr/share/nginx/html
 
 # Change ownership of nginx html directory
-RUN chown -R sagat:sagat /usr/share/nginx/html
+RUN chown -R iota-multisig-manager:iota-multisig-manager /usr/share/nginx/html
 
 # Expose port
 EXPOSE 80

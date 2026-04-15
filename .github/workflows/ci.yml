@@ -1,4 +1,4 @@
-name: Sagat CI
+name: IOTA Multisig Manager CI
 
 on:
   pull_request:
@@ -126,7 +126,7 @@ jobs:
           RUST_LOG: off
         run: |
           export PATH="$HOME/.iota/bin:$PATH"
-          iota start --force-regenesis --with-faucet &
+          iota-localnet start --force-regenesis --with-faucet &
           # Wait for network to be ready
           echo "Waiting for IOTA network to start..."
           timeout 90 bash -c 'until curl -sf -X POST http://127.0.0.1:9000 -H "Content-Type: application/json" -d '\''{"jsonrpc":"2.0","id":1,"method":"iota_getChainIdentifier","params":[]}'\'' 2>/dev/null | grep -q result; do echo "Waiting..."; sleep 2; done'

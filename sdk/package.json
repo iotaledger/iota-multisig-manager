@@ -1,5 +1,5 @@
 {
-	"name": "@iotaledger/sagat",
+	"name": "@iotaledger/iota-multisig-manager",
 	"version": "0.0.1",
 	"type": "commonjs",
 	"main": "./dist/index.js",

@@ -1,4 +1,4 @@
-name: Production Deploy for Sagat API
+name: Production Deploy for IOTA Multisig Manager API
 
 on:
   workflow_dispatch:
@@ -37,7 +37,7 @@ jobs:
           context: .
           file: ./api/Dockerfile
           push: true
-          tags: iotaledger/sagat-api:${{ env.VERSION }}
+          tags: iotaledger/iota-multisig-manager-api:${{ env.VERSION }}
           no-cache: true
 
       - name: Add SSH key

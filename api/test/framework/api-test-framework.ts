@@ -7,11 +7,11 @@ import { Transaction } from '@iota/iota-sdk/transactions';
 import { NANOS_PER_IOTA } from '@iota/iota-sdk/utils';
 import {
 	defaultExpiry,
+	IotaMultisigClient,
 	PersonalMessages,
 	ProposalStatus,
-	SagatClient,
 	type MultisigWithMembers,
-} from '@iotaledger/sagat';
+} from '@iotaledger/iota-multisig-manager';
 import { type Hono } from 'hono';
 
 import {
@@ -45,13 +45,13 @@ export class TestSession {
 	private cookie: string = '';
 	private users: TestUser[] = [];
 	private cookieFetch: ReturnType<typeof createCookieFetch>;
-	private client: SagatClient;
+	private client: IotaMultisigClient;
 
 	constructor(private app: Hono) {
 		this.cookieFetch = createCookieFetch(
 			this.#createFreshAppFetch(),
 		);
-		this.client = new SagatClient(
+		this.client = new IotaMultisigClient(
 			TEST_PLACEHOLDER_URL,
 			'cookie',
 			this.cookieFetch.fetch,
@@ -313,7 +313,7 @@ export class TestSession {
 			this.#createFreshAppFetch(),
 		);
 		// Reset client!
-		this.client = new SagatClient(
+		this.client = new IotaMultisigClient(
 			'http://localhost:3000',
 			'cookie',
 			this.cookieFetch.fetch,
@@ -354,7 +354,7 @@ export class TestSession {
 		);
 	}
 
-	getStatefulClient(): SagatClient {
+	getStatefulClient(): IotaMultisigClient {
 		return this.client;
 	}
 
@@ -501,8 +501,8 @@ export class ApiTestFramework {
 		);
 	}
 
-	statelessClient(): SagatClient {
-		return new SagatClient(
+	statelessClient(): IotaMultisigClient {
+		return new IotaMultisigClient(
 			TEST_PLACEHOLDER_URL,
 			'cookie',
 			this.#createFreshAppFetch(),

@@ -1,4 +1,4 @@
-name: Production Deploy for Sagat APP
+name: Production Deploy for IOTA Multisig Manager APP
 
 on:
   workflow_dispatch:

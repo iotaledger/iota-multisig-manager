@@ -2,7 +2,7 @@
 // Modifications Copyright (c) 2025 IOTA Stiftung
 // SPDX-License-Identifier: Apache-2.0
 
-import type { MultisigProposer } from '@iotaledger/sagat';
+import type { MultisigProposer } from '@iotaledger/iota-multisig-manager';
 
 import { Button } from '../ui/button';
 import { CopyButton } from '../ui/CopyButton';
