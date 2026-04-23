@@ -127,7 +127,6 @@ export function CreateMultisigPage() {
 				publicKey: currentAddress.publicKey,
 			});
 		}
-		 
 	}, [currentAccount, members, currentAddress]);
 
 	// Check if all members have valid public keys and we have at least 2 members
