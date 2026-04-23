@@ -51,15 +51,17 @@ export async function extractMultisigFromBlockchain(
 		options: { showRawInput: true },
 	});
 
-	if (resp.data.length === 0) {
+	if (
+		resp.data.length === 0 ||
+		!resp.data[0].rawTransaction
+	) {
 		throw new NotFoundError(
-			'No transactions found for this address. The multisig must have at least one transaction to be imported.',
+			'No usable transactions found for this address. The multisig must have at least one executed transaction to be imported.',
 		);
 	}
 
-	// 2. Parse the transaction signature
 	const signedData = bcs.SenderSignedData.parse(
-		fromBase64(resp.data[0].rawTransaction!),
+		fromBase64(resp.data[0].rawTransaction),
 	);
 
 	const signature = signedData[0].txSignatures[0];

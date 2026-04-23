@@ -35,14 +35,15 @@ export function useImportMultisig() {
 			});
 		},
 		onSuccess: (response) => {
-			// Invalidate queries
 			queryClient.invalidateQueries({
 				queryKey: [QueryKeys.Multisigs],
+			});
+			queryClient.invalidateQueries({
+				queryKey: [QueryKeys.Invitations],
 			});
 
 			toast.success('Multisig imported successfully!');
 
-			// Navigate to the imported multisig page
 			navigate(`/multisig/${response.multisig.address}`);
 		},
 		onError: (error: Error) => {

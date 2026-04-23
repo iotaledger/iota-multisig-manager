@@ -191,17 +191,6 @@ multisigRouter.post(
 
 		const authorizedPubKeys = c.get('publicKeys');
 
-		const existing =
-			await db.query.SchemaMultisigs.findFirst({
-				where: eq(SchemaMultisigs.address, address),
-			});
-
-		if (existing) {
-			throw new ValidationError(
-				'This multisig has already been imported to the system',
-			);
-		}
-
 		const multisigInfo =
 			await extractMultisigFromBlockchain(address, network);
 
@@ -227,6 +216,20 @@ multisigRouter.post(
 		);
 
 		const result = await db.transaction(async (tx) => {
+			const existing =
+				await tx.query.SchemaMultisigs.findFirst({
+					where: eq(
+						SchemaMultisigs.address,
+						multisigInfo.address,
+					),
+				});
+
+			if (existing) {
+				throw new ValidationError(
+					'This multisig has already been imported to the system',
+				);
+			}
+
 			const msig = (
 				await tx
 					.insert(SchemaMultisigs)
