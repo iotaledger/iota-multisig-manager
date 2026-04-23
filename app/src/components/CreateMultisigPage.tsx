@@ -1,5 +1,5 @@
 // Copyright (c) Mysten Labs, Inc.
-// Modifications Copyright (c) 2025 IOTA Stiftung
+// Modifications Copyright (c) 2026 IOTA Stiftung
 // SPDX-License-Identifier: Apache-2.0
 
 import {
@@ -127,7 +127,7 @@ export function CreateMultisigPage() {
 				publicKey: currentAddress.publicKey,
 			});
 		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
+		 
 	}, [currentAccount, members, currentAddress]);
 
 	// Check if all members have valid public keys and we have at least 2 members
