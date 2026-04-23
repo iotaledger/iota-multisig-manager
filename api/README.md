@@ -27,5 +27,5 @@ To accomplish that, you can run:
 
 ```
 iota client switch --env localnet
-iota start --force-regenesis --with-faucet
+iota-localnet start --force-regenesis --with-faucet
 ```

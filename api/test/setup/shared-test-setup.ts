@@ -27,7 +27,7 @@ export const setupSharedTestEnvironment = () => {
 			if (!running) {
 				console.error('❌ Local IOTA network not running!');
 				console.error(
-					'Start with: iota start --force-regenesis --with-faucet',
+					'Start with: iota-localnet start --force-regenesis --with-faucet',
 				);
 				process.exit(1);
 			}

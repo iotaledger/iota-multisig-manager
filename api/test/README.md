@@ -161,6 +161,6 @@ bun test test/iota-network.test.ts
 
 ## Requirements
 
-- Local IOTA network running (`iota start --force-regenesis --with-faucet`)
+- Local IOTA network running (`iota-localnet start --force-regenesis --with-faucet`)
 - PostgreSQL test database
 - All dependencies installed (`bun install`)
