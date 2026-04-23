@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { formatAddress } from '@iota/iota-sdk/utils';
-import type { MultisigMember } from '@iotaledger/sagat';
+import type { MultisigMember } from '@iotaledger/iota-multisig-manager';
 
 import { Label } from '@/components/ui/label';
 

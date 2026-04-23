@@ -10,7 +10,7 @@ import {
 import {
 	PersonalMessages,
 	type PublicProposal,
-} from '@iotaledger/sagat';
+} from '@iotaledger/iota-multisig-manager';
 import { eq } from 'drizzle-orm';
 import { Hono, type Context } from 'hono';
 

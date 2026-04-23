@@ -6,7 +6,7 @@ import { Transaction } from '@iota/iota-sdk/transactions';
 import {
 	ProposalStatus,
 	type Proposal,
-} from '@iotaledger/sagat';
+} from '@iotaledger/iota-multisig-manager';
 import {
 	beforeEach,
 	describe,

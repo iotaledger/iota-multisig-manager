@@ -1,5 +1,5 @@
 {
-	"name": "sagat-api",
+	"name": "iota-multisig-manager-api",
 	"scripts": {
 		"dev": "bun run --hot src/index.ts",
 		"build": "bun build src/index.ts --outdir dist --target bun",
@@ -11,7 +11,7 @@
 	},
 	"dependencies": {
 		"@iota/iota-sdk": "^1.7.1",
-		"@iotaledger/sagat": "workspace:*",
+		"@iotaledger/iota-multisig-manager": "workspace:*",
 		"dataloader": "^2.2.3",
 		"drizzle-orm": "^0.44.5",
 		"hono": "^4.9.8",

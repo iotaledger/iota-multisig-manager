@@ -5,7 +5,7 @@
 import { type PublicKey } from '@iota/iota-sdk/cryptography';
 import { MultiSigPublicKey } from '@iota/iota-sdk/multisig';
 import { isValidIotaAddress } from '@iota/iota-sdk/utils';
-import { PersonalMessages } from '@iotaledger/sagat';
+import { PersonalMessages } from '@iotaledger/iota-multisig-manager';
 import { and, eq } from 'drizzle-orm';
 import { Hono, type Context } from 'hono';
 

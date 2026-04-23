@@ -2,7 +2,10 @@
 // Modifications Copyright (c) 2025 IOTA Stiftung
 // SPDX-License-Identifier: Apache-2.0
 
-export { SagatClient, type Fetch } from './client.js';
+export {
+	IotaMultisigClient,
+	type Fetch,
+} from './client.js';
 
 export { ProposalStatus } from './types.js';
 

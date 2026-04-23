@@ -26,7 +26,7 @@ export type Fetch = (
 	init?: RequestInit,
 ) => Promise<Response>;
 
-export class SagatClient {
+export class IotaMultisigClient {
 	#apiUrl: string;
 	#mode: 'script' | 'cookie';
 	#jwt: string | null = null;

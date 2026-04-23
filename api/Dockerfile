@@ -1,4 +1,4 @@
-# Sagat API Backend
+# IOTA Multisig Manager API Backend
 FROM oven/bun:1.3.1 AS base
 
 # Install system dependencies including postgres drivers
@@ -34,14 +34,14 @@ RUN bun run build:api
 WORKDIR /monorepo/api
 
 # Create non-root user
-RUN groupadd -g 1001 sagat && \
-    useradd -r -u 1001 -g sagat sagat
+RUN groupadd -g 1001 iota-multisig-manager && \
+    useradd -r -u 1001 -g iota-multisig-manager iota-multisig-manager
 
 # Change ownership
-RUN chown -R sagat:sagat /monorepo
+RUN chown -R iota-multisig-manager:iota-multisig-manager /monorepo
 
 # Switch to non-root user
-USER sagat
+USER iota-multisig-manager
 
 # Expose port
 EXPOSE 3000

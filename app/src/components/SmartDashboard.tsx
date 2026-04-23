@@ -59,7 +59,7 @@ export function SmartDashboard() {
 		<div className="max-w-4xl mx-auto mt-10 px-4 flex-1">
 			<div className="text-center mb-12 flex-1">
 				<h1 className="text-4xl font-bold mb-4">
-					Welcome to Sagat
+					Welcome to IOTA Multisig Manager
 				</h1>
 				<p className="text-xl text-gray-600 mb-8">
 					Get started by creating your first multisig

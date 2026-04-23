@@ -21,11 +21,13 @@ import { CustomWalletButton } from './CustomWalletButton';
 import { ImportMultisigPage } from './ImportMultisigPage';
 import { InvitationsPage } from './InvitationsPage';
 import { MultisigDetailPage } from './MultisigDetailPage';
+import { PrivacyPolicyPage } from './PrivacyPolicyPage';
 import { ProposalDetailPage } from './ProposalDetailPage';
 import { SmartDashboard } from './SmartDashboard';
 import { AssetsTab } from './tabs/AssetsTab';
 import { OverviewTab } from './tabs/OverviewTab';
 import { ProposalsTab } from './tabs/ProposalsTab';
+import { TermsOfUsePage } from './TermsOfUsePage';
 import { ToolsPage } from './ToolsPage';
 import { Loading } from './ui/loading';
 
@@ -50,6 +52,16 @@ const routes: RouteConfig[] = [
 		element: <ToolsPage />,
 		authLevel: 'public' as AuthLevel,
 	})),
+	{
+		path: '/terms-of-use',
+		element: <TermsOfUsePage />,
+		authLevel: 'public',
+	},
+	{
+		path: '/privacy-policy',
+		element: <PrivacyPolicyPage />,
+		authLevel: 'public',
+	},
 	{
 		path: '/proposals',
 		element: <ProposalDetailPage />,
@@ -190,7 +202,7 @@ export function AppRouter() {
 		return (
 			<div className="flex flex-col items-center justify-center min-h-[60vh]">
 				<h1 className="text-3xl font-bold mb-4">
-					Welcome to Sagat
+					Welcome to IOTA Multisig Manager
 				</h1>
 				<p className="text-gray-600 mb-8">
 					Connect your wallet to manage multisig accounts
