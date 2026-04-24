@@ -64,11 +64,14 @@ export const appErrorHandler = (err: Error, c: Context) => {
 		}
 	}
 
-	if (err instanceof NotFoundError)
+	if (err instanceof NotFoundError) {
 		return c.json(
-			{ error: 'The requested resource was not found.' },
+			{
+				error: `${err.message ?? 'The requested resource was not found.'}`,
+			},
 			404,
 		);
+	}
 
 	// eslint-disable-next-line no-console
 	console.error('Unhandled error:', err);
