@@ -1,5 +1,5 @@
 // Copyright (c) Mysten Labs, Inc.
-// Modifications Copyright (c) 2025 IOTA Stiftung
+// Modifications Copyright (c) 2026 IOTA Stiftung
 // SPDX-License-Identifier: Apache-2.0
 
 import { useState } from 'react';
@@ -17,8 +17,8 @@ function AppContent() {
 	const [isBannerDismissed, setIsBannerDismissed] =
 		useState(false);
 	const location = useLocation();
-	const hideHeaderOnPaths = ['/create'];
-	const hideBannerOnPaths = ['/create'];
+	const hideHeaderOnPaths = ['/create', '/import'];
+	const hideBannerOnPaths = ['/create', '/import'];
 
 	// Hide banner on tools pages (public/offline pages)
 	const shouldHideHeader = hideHeaderOnPaths.includes(

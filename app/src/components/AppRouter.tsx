@@ -1,5 +1,5 @@
 // Copyright (c) Mysten Labs, Inc.
-// Modifications Copyright (c) 2025 IOTA Stiftung
+// Modifications Copyright (c) 2026 IOTA Stiftung
 // SPDX-License-Identifier: Apache-2.0
 
 import { useCurrentAccount } from '@iota/dapp-kit';
@@ -18,6 +18,7 @@ import { AuthPrompt } from './AuthPrompt';
 import { CookiePolicyPage } from './CookiePolicyPage';
 import { CreateMultisigPage } from './CreateMultisigPage';
 import { CustomWalletButton } from './CustomWalletButton';
+import { ImportMultisigPage } from './ImportMultisigPage';
 import { InvitationsPage } from './InvitationsPage';
 import { MultisigDetailPage } from './MultisigDetailPage';
 import { PrivacyPolicyPage } from './PrivacyPolicyPage';
@@ -74,6 +75,11 @@ const routes: RouteConfig[] = [
 	{
 		path: '/create',
 		element: <CreateMultisigPage />,
+		authLevel: 'full',
+	},
+	{
+		path: '/import',
+		element: <ImportMultisigPage />,
 		authLevel: 'full',
 	},
 	{

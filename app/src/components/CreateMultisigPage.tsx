@@ -1,5 +1,5 @@
 // Copyright (c) Mysten Labs, Inc.
-// Modifications Copyright (c) 2025 IOTA Stiftung
+// Modifications Copyright (c) 2026 IOTA Stiftung
 // SPDX-License-Identifier: Apache-2.0
 
 import {
@@ -21,7 +21,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useCurrentAccount } from '@iota/dapp-kit';
 import { ArrowLeft, Plus } from 'lucide-react';
 import { useEffect } from 'react';
-import { useForm } from 'react-hook-form';
+import { useForm, useWatch } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 
 import { useApiAuth } from '@/contexts/ApiAuthContext';
@@ -57,7 +57,7 @@ export function CreateMultisigPage() {
 	const {
 		register,
 		handleSubmit,
-		watch,
+		control,
 		setValue,
 		formState: { errors },
 	} = useForm<CreateMultisigForm>({
@@ -77,8 +77,11 @@ export function CreateMultisigPage() {
 		},
 	});
 
-	const members = watch('members');
-	const threshold = watch('threshold');
+	const members = useWatch({ control, name: 'members' });
+	const threshold = useWatch({
+		control,
+		name: 'threshold',
+	});
 
 	const totalWeight = members.reduce(
 		(sum, m) => sum + m.weight,
@@ -123,12 +126,16 @@ export function CreateMultisigPage() {
 			!members[0]?.publicKey &&
 			currentAddress
 		) {
-			handleMemberChange('creator', {
-				publicKey: currentAddress.publicKey,
-			});
+			setValue(
+				'members',
+				members.map((m) =>
+					m.id === 'creator'
+						? { ...m, publicKey: currentAddress.publicKey }
+						: m,
+				),
+			);
 		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [currentAccount, members, currentAddress]);
+	}, [currentAccount, members, currentAddress, setValue]);
 
 	// Check if all members have valid public keys and we have at least 2 members
 	const allMembersValid = members.every(
@@ -190,10 +197,16 @@ export function CreateMultisigPage() {
 							<h1 className="text-3xl font-bold text-slate-900 mb-4">
 								Create New Multisig
 							</h1>
-							<p className="text-slate-600 mt-12">
+							<p className="text-slate-600 mt-4">
 								Learn about multisig wallets and how to set
 								them up securely.
 							</p>
+							<Link
+								to="/import"
+								className="inline-flex items-center text-sm text-blue-600 hover:text-blue-800 mt-4"
+							>
+								Import existing multisig instead →
+							</Link>
 						</div>
 
 						<MultisigPageFAQ />

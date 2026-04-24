@@ -1,9 +1,9 @@
 // Copyright (c) Mysten Labs, Inc.
-// Modifications Copyright (c) 2025 IOTA Stiftung
+// Modifications Copyright (c) 2026 IOTA Stiftung
 // SPDX-License-Identifier: Apache-2.0
 
 import { useCurrentAccount } from '@iota/dapp-kit';
-import { Mail, Plus } from 'lucide-react';
+import { Download, Mail, Plus } from 'lucide-react';
 import { Link, Navigate } from 'react-router-dom';
 
 import { useInvitations } from '../hooks/useInvitations';
@@ -65,16 +65,28 @@ export function SmartDashboard() {
 					Get started by creating your first multisig
 				</p>
 
-				{/* Primary CTA - Create Multisig */}
-				<Link to="/create">
-					<Button size="lg" className="px-8">
-						<Plus className="mr-2 h-5 w-5" />
-						Create Your First Multisig
-					</Button>
-				</Link>
+				{/* Primary CTAs - Create or Import Multisig */}
+				<div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+					<Link to="/create">
+						<Button size="lg" className="px-8">
+							<Plus className="mr-2 h-5 w-5" />
+							Create New Multisig
+						</Button>
+					</Link>
+					<Link to="/import">
+						<Button
+							size="lg"
+							variant="outline"
+							className="px-8"
+						>
+							<Download className="mr-2 h-5 w-5" />
+							Import Existing Multisig
+						</Button>
+					</Link>
+				</div>
 
 				{/* Secondary CTA - View Invitations */}
-				<div className="mt-4">
+				<div className="mt-6">
 					<Link to="/invitations">
 						<Button
 							variant={

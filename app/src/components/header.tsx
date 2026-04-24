@@ -1,9 +1,9 @@
 // Copyright (c) Mysten Labs, Inc.
-// Modifications Copyright (c) 2025 IOTA Stiftung
+// Modifications Copyright (c) 2026 IOTA Stiftung
 // SPDX-License-Identifier: Apache-2.0
 
 import { useCurrentAccount } from '@iota/dapp-kit';
-import { Mail, Menu, Plus } from 'lucide-react';
+import { Download, Mail, Menu, Plus } from 'lucide-react';
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -85,6 +85,23 @@ const NavigationLinks = ({
 						>
 							<Plus className="w-4 h-4 mr-2" />
 							Create Multisig
+						</Button>
+					</Link>
+
+					<Link to="/import" onClick={onNavigate}>
+						<Button
+							variant={
+								location.pathname === '/import'
+									? 'default'
+									: 'outline'
+							}
+							size={mobile ? 'default' : 'sm'}
+							className={
+								mobile ? 'w-full justify-start' : ''
+							}
+						>
+							<Download className="w-4 h-4 mr-2" />
+							Import Multisig
 						</Button>
 					</Link>
 				</>

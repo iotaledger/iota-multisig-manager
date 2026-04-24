@@ -1,5 +1,5 @@
 // Copyright (c) Mysten Labs, Inc.
-// Modifications Copyright (c) 2025 IOTA Stiftung
+// Modifications Copyright (c) 2026 IOTA Stiftung
 // SPDX-License-Identifier: Apache-2.0
 
 import {
@@ -98,6 +98,20 @@ export class IotaMultisigClient {
 		return this.#request<MultisigWithMembers>(
 			`/multisig/${address}`,
 		);
+	}
+
+	async importMultisig(data: {
+		address: string;
+		name?: string;
+		network: string;
+	}): Promise<{
+		multisig: Multisig;
+		members: MultisigMember[];
+	}> {
+		return this.#request('/multisig/import', {
+			method: 'POST',
+			body: JSON.stringify(data),
+		});
 	}
 
 	async acceptMultisigInvite(

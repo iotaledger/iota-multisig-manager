@@ -1,5 +1,5 @@
 // Copyright (c) Mysten Labs, Inc.
-// Modifications Copyright (c) 2025 IOTA Stiftung
+// Modifications Copyright (c) 2026 IOTA Stiftung
 // SPDX-License-Identifier: Apache-2.0
 
 import { useIotaClient } from '@iota/dapp-kit';
@@ -59,7 +59,7 @@ export function useExecuteProposal() {
 				// Step 2: Map signatures to the correct order based on the multisig public key order
 				// The signatures need to be in the same order as the public keys in the multisig
 				const orderedSignatures: string[] = [];
-				for (const member of proposal.multisig.members) {
+				for (const member of multisigMembers) {
 					const signature = proposal.signatures.find(
 						(sig) => sig.publicKey === member.publicKey,
 					);
