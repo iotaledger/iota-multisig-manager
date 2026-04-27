@@ -37,7 +37,8 @@ app.use(
 				return origin;
 			// Allow production domains
 			if (
-				origin === 'https://multisig-manager.iota.org' ||
+				origin ===
+					'https://iota-multisig-manager.iota.org' ||
 				origin === 'https://api.multisig-manager.iota.org'
 			)
 				return origin;
